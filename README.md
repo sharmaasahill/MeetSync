@@ -1,23 +1,23 @@
-# 📅 Meeting Calendar Assistant
+# Meeting Calendar Assistant
 
 A sophisticated **Spring Boot REST API** for enterprise meeting management, featuring intelligent calendar coordination, conflict detection, and free slot discovery.
 
-## 🎯 Project Overview
+## Project Overview
 
 This application demonstrates advanced **Spring Boot development** with complex business logic implementation for calendar management. Built as a comprehensive solution for enterprise meeting coordination challenges.
 
-### ✨ Key Features
+### Key Features
 
-- **📝 Meeting Management**: Complete CRUD operations for meeting booking and management
-- **👥 Employee Management**: Comprehensive employee registry with department/designation tracking
-- **🔍 Smart Conflict Detection**: Automatic detection of scheduling conflicts across participants
-- **⏰ Free Slot Discovery**: Intelligent algorithm to find available time slots between multiple employees
-- **🕐 Business Hours Support**: Configurable working hours (9 AM - 6 PM by default)
-- **👨‍👩‍👧‍👦 Multi-participant Meetings**: Support for group meetings with conflict resolution
-- **🛡️ Input Validation**: Comprehensive validation with proper error handling
-- **🗄️ In-Memory Database**: H2 database with sample data for immediate testing
+- **Meeting Management**: Complete CRUD operations for meeting booking and management
+- **Employee Management**: Comprehensive employee registry with department/designation tracking
+- **Smart Conflict Detection**: Automatic detection of scheduling conflicts across participants
+- **Free Slot Discovery**: Intelligent algorithm to find available time slots between multiple employees
+- **Business Hours Support**: Configurable working hours (9 AM - 6 PM by default)
+- **Multi-participant Meetings**: Support for group meetings with conflict resolution
+- **Input Validation**: Comprehensive validation with proper error handling
+- **In-Memory Database**: H2 database with sample data for immediate testing
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
 ### **Technology Stack**
 - **Backend**: Java 17, Spring Boot 3.2.0
@@ -46,7 +46,7 @@ src/main/java/com/assessment/
 └── exception/          # Custom exception handling
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Java 17+** installed
@@ -72,7 +72,7 @@ mvn spring-boot:run
   - Username: `sa`
   - Password: `password`
 
-## 📋 API Documentation
+## API Documentation
 
 ### **Employee Management**
 | Method | Endpoint | Description |
@@ -105,7 +105,7 @@ mvn spring-boot:run
 | GET | `/api/calendar/next-available-slot` | Get next available slot |
 | GET | `/api/calendar/optimal-time` | Find optimal meeting time |
 
-## 🧪 Testing
+## Testing
 
 ### **Test Coverage**
 - **Unit Tests**: Service layer business logic
@@ -124,7 +124,7 @@ mvn test jacoco:report
 ### **Postman Collection**
 Import `MeetingCalendar-API-Collection.json` for comprehensive API testing with pre-configured requests.
 
-## 💼 Sample Usage
+## Sample Usage
 
 ### **1. Create Employees**
 ```json
@@ -173,7 +173,7 @@ POST /api/meetings/conflicts
 }
 ```
 
-## 🎨 Key Algorithmic Features
+## Key Algorithmic Features
 
 ### **Conflict Detection Algorithm**
 - Validates meeting overlaps across all participants
@@ -187,7 +187,7 @@ POST /api/meetings/conflicts
 - Business hours filtering
 - Optimal time recommendation engine
 
-## 🛠️ Development Features
+## Development Features
 
 ### **Error Handling**
 - Global exception handler with standardized responses
@@ -207,14 +207,14 @@ The application includes pre-loaded sample data:
 - 3 sample meetings for immediate testing
 - Realistic business scenarios
 
-## 📈 Performance Considerations
+## Performance Considerations
 
 - **In-Memory Database**: Fast startup and testing
 - **Lazy Loading**: Optimized JPA relationships
 - **Query Optimization**: Efficient database queries
 - **Caching Strategy**: Ready for production caching implementation
 
-## 🔧 Configuration
+## Configuration
 
 ### **Application Properties**
 - **Server Port**: 8080
@@ -228,7 +228,7 @@ The application includes pre-loaded sample data:
 - **Maximum Meeting Duration**: 8 hours
 - **Timezone**: UTC
 
-## 🤝 Contributing
+## Contributing
 
 This project demonstrates best practices for:
 - Clean code architecture
@@ -237,20 +237,20 @@ This project demonstrates best practices for:
 - Spring Boot development
 - Enterprise application patterns
 
-## 📄 License
+## License
 
 This project is developed for assessment purposes and showcases enterprise-level Spring Boot application development capabilities.
 
 ---
 
-## 🎯 Assessment Highlights
+## Assessment Highlights
 
 This project demonstrates proficiency in:
-- **Spring Boot Ecosystem**: Web, Data JPA, Validation, Testing
-- **RESTful API Design**: HTTP compliance, proper status codes, resource modeling
-- **Complex Business Logic**: Calendar algorithms, conflict detection, optimization
-- **Testing Strategy**: Unit, integration, and API testing
-- **Clean Architecture**: Separation of concerns, design patterns
-- **Error Handling**: Comprehensive exception management
-- **Database Integration**: JPA/Hibernate with relationship modeling
-- **Documentation**: Professional API and code documentation 
+- Spring Boot Ecosystem: Web, Data JPA, Validation, Testing
+- RESTful API Design: HTTP compliance, proper status codes, resource modeling
+- Complex Business Logic: Calendar algorithms, conflict detection, optimization
+- Testing Strategy: Unit, integration, and API testing
+- Clean Architecture: Separation of concerns, design patterns
+- Error Handling: Comprehensive exception management
+- Database Integration: JPA/Hibernate with relationship modeling
+- Documentation: Professional API and code documentation 
