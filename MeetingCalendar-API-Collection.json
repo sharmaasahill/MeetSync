@@ -1,16 +1,16 @@
 {
   "info": {
     "_postman_id": "meeting-calendar-api-collection",
-    "name": "Meeting Calendar Assistant API",
-    "description": "Complete API collection for testing the Meeting Calendar Assistant application with working examples",
+    "name": "MeetSync API",
+    "description": "API collection for testing MeetSync. Sample meetings are created for the day after the server starts, so update the dates below to a future date before running.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "✅ Employee Management",
+      "name": "Employee Management",
       "item": [
         {
-          "name": "✅ GET All Employees",
+          "name": "Get All Employees",
           "request": {
             "method": "GET",
             "header": [],
@@ -22,7 +22,7 @@
           }
         },
         {
-          "name": "✅ GET John Doe by ID",
+          "name": "Get Rahul Mehta by ID",
           "request": {
             "method": "GET",
             "header": [],
@@ -34,7 +34,7 @@
           }
         },
         {
-          "name": "✅ CREATE New Employee",
+          "name": "Create Employee",
           "request": {
             "method": "POST",
             "header": [
@@ -45,7 +45,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"New Test Employee\",\n  \"email\": \"newtest@company.com\",\n  \"department\": \"Testing\",\n  \"designation\": \"QA Engineer\"\n}"
+              "raw": "{\n  \"name\": \"Ananya Gupta\",\n  \"email\": \"ananya.gupta@company.com\",\n  \"department\": \"Testing\",\n  \"designation\": \"QA Engineer\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/employees",
@@ -57,10 +57,10 @@
       ]
     },
     {
-      "name": "✅ Meeting Management",
+      "name": "Meeting Management",
       "item": [
         {
-          "name": "✅ GET All Meetings",
+          "name": "Get All Meetings",
           "request": {
             "method": "GET",
             "header": [],
@@ -72,7 +72,7 @@
           }
         },
         {
-          "name": "✅ BOOK Meeting (Future Date)",
+          "name": "Book Meeting",
           "request": {
             "method": "POST",
             "header": [
@@ -83,7 +83,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"New Team Meeting\",\n  \"description\": \"Weekly team sync meeting\",\n  \"startTime\": \"2025-07-12 10:00:00\",\n  \"endTime\": \"2025-07-12 11:00:00\",\n  \"organizerEmail\": \"john.doe@company.com\",\n  \"participantEmails\": [\"bob.wilson@company.com\"],\n  \"location\": \"Conference Room B\"\n}"
+              "raw": "{\n  \"title\": \"Team Sync\",\n  \"description\": \"Weekly team sync meeting\",\n  \"startTime\": \"2026-12-15 10:00:00\",\n  \"endTime\": \"2026-12-15 11:00:00\",\n  \"organizerEmail\": \"rahul.mehta@company.com\",\n  \"participantEmails\": [\"amit.verma@company.com\"],\n  \"location\": \"Conference Room B\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/meetings",
@@ -93,7 +93,7 @@
           }
         },
         {
-          "name": "✅ CHECK Conflicts",
+          "name": "Check Conflicts",
           "request": {
             "method": "POST",
             "header": [
@@ -104,7 +104,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"participantEmails\": [\"john.doe@company.com\", \"bob.wilson@company.com\"],\n  \"startTime\": \"2025-07-12 10:30:00\",\n  \"endTime\": \"2025-07-12 11:30:00\"\n}"
+              "raw": "{\n  \"participantEmails\": [\"rahul.mehta@company.com\", \"amit.verma@company.com\"],\n  \"startTime\": \"2026-12-15 10:30:00\",\n  \"endTime\": \"2026-12-15 11:30:00\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/meetings/conflicts",
@@ -116,10 +116,10 @@
       ]
     },
     {
-      "name": "✅ Calendar Features",
+      "name": "Calendar",
       "item": [
         {
-          "name": "✅ FIND Free Slots",
+          "name": "Find Free Slots",
           "request": {
             "method": "POST",
             "header": [
@@ -130,7 +130,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"employee1Email\": \"bob.wilson@company.com\",\n  \"employee2Email\": \"alice.cooper@company.com\",\n  \"startDate\": \"2025-07-13 09:00:00\",\n  \"endDate\": \"2025-07-13 18:00:00\",\n  \"meetingDurationMinutes\": 60\n}"
+              "raw": "{\n  \"employee1Email\": \"amit.verma@company.com\",\n  \"employee2Email\": \"sneha.iyer@company.com\",\n  \"startDate\": \"2026-12-15 09:00:00\",\n  \"endDate\": \"2026-12-15 18:00:00\",\n  \"meetingDurationMinutes\": 60\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/calendar/free-slots",
@@ -140,28 +140,28 @@
           }
         },
         {
-          "name": "✅ GET Employee Availability",
+          "name": "Get Employee Availability",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/calendar/free-slots/alice.cooper@company.com?start=2025-07-13 09:00:00&end=2025-07-13 18:00:00&duration=60",
+              "raw": "{{baseUrl}}/calendar/free-slots/sneha.iyer@company.com?start=2026-12-15 09:00:00&end=2026-12-15 18:00:00&duration=60",
               "host": ["{{baseUrl}}"],
-                              "path": ["calendar", "free-slots", "alice.cooper@company.com"],
-                "query": [
-                  {
-                    "key": "start",
-                    "value": "2025-07-13 09:00:00"
-                  },
-                  {
-                    "key": "end",
-                    "value": "2025-07-13 18:00:00"
-                  },
-                  {
-                    "key": "duration",
-                    "value": "60"
-                  }
-                ]
+              "path": ["calendar", "free-slots", "sneha.iyer@company.com"],
+              "query": [
+                {
+                  "key": "start",
+                  "value": "2026-12-15 09:00:00"
+                },
+                {
+                  "key": "end",
+                  "value": "2026-12-15 18:00:00"
+                },
+                {
+                  "key": "duration",
+                  "value": "60"
+                }
+              ]
             }
           }
         }
@@ -175,4 +175,4 @@
       "type": "string"
     }
   ]
-} 
+}

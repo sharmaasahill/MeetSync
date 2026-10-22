@@ -73,8 +73,8 @@ class MeetingCalendarIntegrationTest {
         employeeRepository.deleteAll();
         
         // Create test employees with unique emails to avoid conflicts
-        employee1 = new Employee("Test John", "test.john@example.com", "Engineering", "Developer");
-        employee2 = new Employee("Test Jane", "test.jane@example.com", "Marketing", "Manager");
+        employee1 = new Employee("Test Rahul", "test.rahul@example.com", "Engineering", "Developer");
+        employee2 = new Employee("Test Priya", "test.priya@example.com", "Marketing", "Manager");
         
         employee1 = employeeRepository.save(employee1);
         employee2 = employeeRepository.save(employee2);
@@ -87,7 +87,7 @@ class MeetingCalendarIntegrationTest {
     @Test
     void createEmployee_Success() throws Exception {
         // Given
-        Employee newEmployee = new Employee("Test Bob", "test.bob@example.com", "Sales", "Representative");
+        Employee newEmployee = new Employee("Test Amit", "test.amit@example.com", "Sales", "Representative");
         
         // When & Then
         MvcResult result = mockMvc.perform(post("/api/employees")
@@ -96,14 +96,14 @@ class MeetingCalendarIntegrationTest {
 
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.success").value(true))
-                .andExpect(jsonPath("$.data.name").value("Test Bob"))
-                .andExpect(jsonPath("$.data.email").value("test.bob@example.com"))
+                .andExpect(jsonPath("$.data.name").value("Test Amit"))
+                .andExpect(jsonPath("$.data.email").value("test.amit@example.com"))
                 .andExpect(jsonPath("$.data.department").value("Sales"))
                 .andExpect(jsonPath("$.data.designation").value("Representative"))
                 .andReturn();
         
         // Verify employee was saved to database
-        assertTrue(employeeRepository.existsByEmail("test.bob@example.com"));
+        assertTrue(employeeRepository.existsByEmail("test.amit@example.com"));
     }
     
     @Test
@@ -288,7 +288,7 @@ class MeetingCalendarIntegrationTest {
     @Test
     void endToEndWorkflow_BookMeetingAndFindSlots() throws Exception {
         // Step 1: Create additional employee
-        Employee employee3 = new Employee("Test Alice", "test.alice@example.com", "HR", "Specialist");
+        Employee employee3 = new Employee("Test Sneha", "test.sneha@example.com", "HR", "Specialist");
         employee3 = employeeRepository.save(employee3);
         
         // Step 2: Book a meeting between employee1 and employee2

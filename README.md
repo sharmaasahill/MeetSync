@@ -30,12 +30,12 @@ cd MeetSync
 Wait until you see:
 ```
 Started MeetingCalendarAssistantApplication
-✓ Created 5 employees
-✓ Created 3 meetings
-✓ API available at: http://localhost:8080/api
+Created 5 employees
+Created 3 meetings
+API available at: http://localhost:8080/api
 ```
 
-The application is now running with sample data pre-loaded!
+The application is now running with sample data pre-loaded.
 
 ### Testing the API
 
@@ -76,8 +76,8 @@ curl -X POST http://localhost:8080/api/meetings \
     "description": "Weekly sync",
     "startTime": "2026-12-15 10:00:00",
     "endTime": "2026-12-15 11:00:00",
-    "organizerEmail": "john.doe@company.com",
-    "participantEmails": ["jane.smith@company.com"],
+    "organizerEmail": "rahul.mehta@company.com",
+    "participantEmails": ["priya.patel@company.com"],
     "location": "Conference Room A"
   }'
 ```
@@ -169,16 +169,16 @@ src/main/java/com/assessment/
 The application comes pre-loaded with:
 
 **Employees:**
-1. John Doe - john.doe@company.com (Engineering, Senior Developer)
-2. Jane Smith - jane.smith@company.com (Engineering, Team Lead)
-3. Bob Wilson - bob.wilson@company.com (Marketing, Marketing Manager)
-4. Alice Johnson - alice.johnson@company.com (HR, HR Manager)
-5. Charlie Brown - charlie.brown@company.com (Finance, Financial Analyst)
+1. Rahul Mehta - rahul.mehta@company.com (Engineering, Senior Developer)
+2. Priya Patel - priya.patel@company.com (Marketing, Product Manager)
+3. Amit Verma - amit.verma@company.com (Sales, Sales Manager)
+4. Sneha Iyer - sneha.iyer@company.com (HR, HR Specialist)
+5. Vikram Reddy - vikram.reddy@company.com (Engineering, DevOps Engineer)
 
-**Meetings:**
-1. Team Standup - July 15, 2025, 10:00-11:00 AM
-2. Project Planning - July 15, 2025, 2:00-3:00 PM
-3. Budget Review - July 16, 2025, 11:00 AM-12:00 PM
+**Meetings** (dates are relative to when the server starts):
+1. Daily Standup - tomorrow, 9:00-9:30 AM (Rahul, Vikram)
+2. Product Planning Session - tomorrow, 2:00-4:00 PM (Priya, Rahul, Amit)
+3. New Employee Onboarding - day after tomorrow, 10:00 AM-12:00 PM (Sneha)
 
 ## Testing
 
@@ -230,9 +230,9 @@ Default settings in `application.yml`:
 - Example: `http://localhost:8080/api/employees`
 
 **Can't create meeting:**
-- Verify employee emails exist in database
+- Verify organizer and participant emails exist
 - Use correct time format: `YYYY-MM-DD HH:MM:SS`
-- Ensure meeting is within business hours (9 AM - 6 PM)
+- Make sure the start time is in the future and no participant is already busy
 
 ## Project Highlights
 
@@ -247,4 +247,4 @@ This project demonstrates:
 
 ## License
 
-This project is developed for demonstration and assessment purposes.
+This project is developed Sahil Sharma. 

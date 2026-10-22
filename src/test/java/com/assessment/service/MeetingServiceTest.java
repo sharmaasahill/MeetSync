@@ -52,10 +52,10 @@ class MeetingServiceTest {
     
     @BeforeEach
     void setUp() {
-        organizer = new Employee("John Organizer", "john@company.com", "Engineering", "Manager");
+        organizer = new Employee("Rahul Organizer", "rahul@company.com", "Engineering", "Manager");
         organizer.setId(1L);
         
-        participant = new Employee("Jane Participant", "jane@company.com", "Marketing", "Developer");
+        participant = new Employee("Priya Participant", "priya@company.com", "Marketing", "Developer");
         participant.setId(2L);
         
         futureStart = LocalDateTime.now().plusDays(1).withHour(10).withMinute(0).withSecond(0).withNano(0);

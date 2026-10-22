@@ -38,10 +38,10 @@ class EmployeeServiceTest {
     
     @BeforeEach
     void setUp() {
-        testEmployee = new Employee("John Doe", "john.doe@company.com", "Engineering", "Developer");
+        testEmployee = new Employee("Rahul Mehta", "rahul.mehta@company.com", "Engineering", "Developer");
         testEmployee.setId(1L);
         
-        existingEmployee = new Employee("Jane Smith", "jane.smith@company.com", "HR", "Manager");
+        existingEmployee = new Employee("Priya Patel", "priya.patel@company.com", "HR", "Manager");
         existingEmployee.setId(2L);
     }
     
@@ -166,7 +166,7 @@ class EmployeeServiceTest {
     void updateEmployee_Success() {
         // Given
         Long employeeId = 1L;
-        Employee updatedData = new Employee("John Updated", "john.updated@company.com", "Engineering", "Senior Developer");
+        Employee updatedData = new Employee("Rahul Updated", "rahul.updated@company.com", "Engineering", "Senior Developer");
         
         when(employeeRepository.findById(employeeId)).thenReturn(Optional.of(testEmployee));
         when(employeeRepository.existsByEmail(updatedData.getEmail())).thenReturn(false);
@@ -187,7 +187,7 @@ class EmployeeServiceTest {
     void updateEmployee_SameEmail_Success() {
         // Given
         Long employeeId = 1L;
-        Employee updatedData = new Employee("John Updated", testEmployee.getEmail(), "Engineering", "Senior Developer");
+        Employee updatedData = new Employee("Rahul Updated", testEmployee.getEmail(), "Engineering", "Senior Developer");
         
         when(employeeRepository.findById(employeeId)).thenReturn(Optional.of(testEmployee));
         when(employeeRepository.save(any(Employee.class))).thenReturn(testEmployee);
@@ -207,7 +207,7 @@ class EmployeeServiceTest {
     void updateEmployee_DuplicateEmail_ThrowsException() {
         // Given
         Long employeeId = 1L;
-        Employee updatedData = new Employee("John Updated", "existing@company.com", "Engineering", "Senior Developer");
+        Employee updatedData = new Employee("Rahul Updated", "existing@company.com", "Engineering", "Senior Developer");
         
         when(employeeRepository.findById(employeeId)).thenReturn(Optional.of(testEmployee));
         when(employeeRepository.existsByEmail(updatedData.getEmail())).thenReturn(true);
@@ -276,7 +276,7 @@ class EmployeeServiceTest {
     @Test
     void searchEmployeesByName_Success() {
         // Given
-        String namePattern = "John";
+        String namePattern = "Rahul";
         List<Employee> employees = Arrays.asList(testEmployee);
         when(employeeRepository.findByNameContainingIgnoreCase(namePattern)).thenReturn(employees);
         

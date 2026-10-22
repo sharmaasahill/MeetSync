@@ -40,18 +40,18 @@ public class DataInitializer implements CommandLineRunner {
     
     private void initializeData() {
         // Create sample employees
-        Employee johnDoe = new Employee("John Doe", "john.doe@company.com", "Engineering", "Senior Developer");
-        Employee janeSmith = new Employee("Jane Smith", "jane.smith@company.com", "Marketing", "Product Manager");
-        Employee bobWilson = new Employee("Bob Wilson", "bob.wilson@company.com", "Sales", "Sales Manager");
-        Employee aliceCooper = new Employee("Alice Cooper", "alice.cooper@company.com", "HR", "HR Specialist");
-        Employee charlieBrown = new Employee("Charlie Brown", "charlie.brown@company.com", "Engineering", "DevOps Engineer");
+        Employee rahulMehta = new Employee("Rahul Mehta", "rahul.mehta@company.com", "Engineering", "Senior Developer");
+        Employee priyaPatel = new Employee("Priya Patel", "priya.patel@company.com", "Marketing", "Product Manager");
+        Employee amitVerma = new Employee("Amit Verma", "amit.verma@company.com", "Sales", "Sales Manager");
+        Employee snehaIyer = new Employee("Sneha Iyer", "sneha.iyer@company.com", "HR", "HR Specialist");
+        Employee vikramReddy = new Employee("Vikram Reddy", "vikram.reddy@company.com", "Engineering", "DevOps Engineer");
         
         // Save employees
-        johnDoe = employeeRepository.save(johnDoe);
-        janeSmith = employeeRepository.save(janeSmith);
-        bobWilson = employeeRepository.save(bobWilson);
-        aliceCooper = employeeRepository.save(aliceCooper);
-        charlieBrown = employeeRepository.save(charlieBrown);
+        rahulMehta = employeeRepository.save(rahulMehta);
+        priyaPatel = employeeRepository.save(priyaPatel);
+        amitVerma = employeeRepository.save(amitVerma);
+        snehaIyer = employeeRepository.save(snehaIyer);
+        vikramReddy = employeeRepository.save(vikramReddy);
         
         // Create sample meetings for demonstration
         LocalDateTime tomorrow = LocalDateTime.now().plusDays(1);
@@ -62,8 +62,8 @@ public class DataInitializer implements CommandLineRunner {
         standup.setDescription("Engineering team daily standup meeting");
         standup.setStartTime(tomorrow.withHour(9).withMinute(0).withSecond(0).withNano(0));
         standup.setEndTime(tomorrow.withHour(9).withMinute(30).withSecond(0).withNano(0));
-        standup.setOrganizer(johnDoe);
-        standup.setParticipantEmails(Arrays.asList(charlieBrown.getEmail()));
+        standup.setOrganizer(rahulMehta);
+        standup.setParticipantEmails(Arrays.asList(vikramReddy.getEmail()));
         standup.setLocation("Engineering Conference Room");
         standup.setStatus(MeetingStatus.SCHEDULED);
         
@@ -73,8 +73,8 @@ public class DataInitializer implements CommandLineRunner {
         productPlanning.setDescription("Monthly product planning and roadmap discussion");
         productPlanning.setStartTime(tomorrow.withHour(14).withMinute(0).withSecond(0).withNano(0));
         productPlanning.setEndTime(tomorrow.withHour(16).withMinute(0).withSecond(0).withNano(0));
-        productPlanning.setOrganizer(janeSmith);
-        productPlanning.setParticipantEmails(Arrays.asList(johnDoe.getEmail(), bobWilson.getEmail()));
+        productPlanning.setOrganizer(priyaPatel);
+        productPlanning.setParticipantEmails(Arrays.asList(rahulMehta.getEmail(), amitVerma.getEmail()));
         productPlanning.setLocation("Main Conference Room");
         productPlanning.setStatus(MeetingStatus.SCHEDULED);
         
@@ -84,7 +84,7 @@ public class DataInitializer implements CommandLineRunner {
         hrOnboarding.setDescription("Onboarding session for new team members");
         hrOnboarding.setStartTime(tomorrow.plusDays(1).withHour(10).withMinute(0).withSecond(0).withNano(0));
         hrOnboarding.setEndTime(tomorrow.plusDays(1).withHour(12).withMinute(0).withSecond(0).withNano(0));
-        hrOnboarding.setOrganizer(aliceCooper);
+        hrOnboarding.setOrganizer(snehaIyer);
         hrOnboarding.setParticipantEmails(Arrays.asList());
         hrOnboarding.setLocation("HR Training Room");
         hrOnboarding.setStatus(MeetingStatus.SCHEDULED);
@@ -94,10 +94,10 @@ public class DataInitializer implements CommandLineRunner {
         meetingRepository.save(productPlanning);
         meetingRepository.save(hrOnboarding);
         
-        System.out.println("✅ Sample data initialized successfully!");
-        System.out.println("📊 Created " + employeeRepository.count() + " employees");
-        System.out.println("📅 Created " + meetingRepository.count() + " meetings");
-        System.out.println("🌐 API available at: http://localhost:8080/api");
-        System.out.println("🗃️  H2 Console available at: http://localhost:8080/api/h2-console");
+        System.out.println("Sample data initialized successfully");
+        System.out.println("Created " + employeeRepository.count() + " employees");
+        System.out.println("Created " + meetingRepository.count() + " meetings");
+        System.out.println("API available at: http://localhost:8080/api");
+        System.out.println("H2 Console available at: http://localhost:8080/api/h2-console");
     }
-} 
+}

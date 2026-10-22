@@ -48,10 +48,10 @@ class CalendarServiceTest {
     
     @BeforeEach
     void setUp() {
-        employee1 = new Employee("John Doe", "john@company.com", "Engineering", "Developer");
+        employee1 = new Employee("Rahul Mehta", "rahul@company.com", "Engineering", "Developer");
         employee1.setId(1L);
         
-        employee2 = new Employee("Jane Smith", "jane@company.com", "Marketing", "Manager");
+        employee2 = new Employee("Priya Patel", "priya@company.com", "Marketing", "Manager");
         employee2.setId(2L);
         
         // Set up a test day from 9 AM to 6 PM
